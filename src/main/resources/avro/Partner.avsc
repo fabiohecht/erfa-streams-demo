@@ -1,0 +1,64 @@
+{
+  "namespace": "ch.generali.copa.dataintegration.kafkastreams.integration",
+  "type": "record",
+  "name": "Partner",
+  "fields": [
+    {"name": "id", "type": "long"},
+    {
+      "name": "language",
+      "type": {
+        "name": "Language",
+        "type": "enum",
+        "symbols": [
+          "de",
+          "fr",
+          "it",
+          "en"
+        ]
+      }
+    },
+    {
+      "name": "addresses",
+      "type": {
+        "name": "Addresses",
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "Address",
+          "fields": [
+            {
+              "name": "street",
+              "type": "string"
+            },
+            {
+              "name": "houseNumber",
+              "type": "string"
+            },
+            {
+              "name": "city",
+              "type": "string"
+            },
+            {
+              "name": "postalCode",
+              "type": "string"
+            },
+            {
+              "name": "country",
+              "type": {
+                "name": "Country",
+                "type": "enum",
+                "symbols": [
+                  "CH",
+                  "DE",
+                  "FR",
+                  "IT",
+                  "AT"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

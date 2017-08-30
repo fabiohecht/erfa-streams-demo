@@ -1,0 +1,712 @@
+{
+  "namespace": "ch.generali.copa.dataintegration.kafkastreams.replicate",
+  "type": "record",
+  "name": "MetadataMessage",
+  "fields": [
+    {
+      "name": "schemaId",
+      "type": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "lineage",
+      "type": {
+        "type": "record",
+        "name": "Lineage",
+        "fields": [
+          {
+            "name": "server",
+            "type": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "task",
+            "type": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "schema",
+            "type": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "table",
+            "type": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tableVersion",
+            "type": {
+              "type": "long"
+            }
+          },
+          {
+            "name": "timestamp",
+            "type": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "tableStructure",
+      "type": {
+        "type": "record",
+        "name": "TableStructure",
+        "fields": [
+          {
+            "name": "tableColumns",
+            "type": {
+              "type": "record",
+              "name": "TableColumns",
+              "fields": [
+                {
+                  "name": "COAG_ID",
+                  "type": {
+                    "type": "record",
+                    "name": "COAG_ID",
+                    "fields": [
+                      {
+                        "name": "ordinal",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "type",
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "name": "length",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "precision",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "scale",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "primaryKeyPosition",
+                        "type": {
+                          "type": "int"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "COAG_FAMILY_NAME",
+                  "type": {
+                    "type": "record",
+                    "name": "COAG_FAMILY_NAME",
+                    "fields": [
+                      {
+                        "name": "ordinal",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "type",
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "name": "length",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "precision",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "scale",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "primaryKeyPosition",
+                        "type": {
+                          "type": "int"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "COAG_NAME",
+                  "type": {
+                    "type": "record",
+                    "name": "COAG_NAME",
+                    "fields": [
+                      {
+                        "name": "ordinal",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "type",
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "name": "length",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "precision",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "scale",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "primaryKeyPosition",
+                        "type": {
+                          "type": "int"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "COAG_GENDER",
+                  "type": {
+                    "type": "record",
+                    "name": "COAG_GENDER",
+                    "fields": [
+                      {
+                        "name": "ordinal",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "type",
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "name": "length",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "precision",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "scale",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "primaryKeyPosition",
+                        "type": {
+                          "type": "int"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "COAG_BIRTHDATE",
+                  "type": {
+                    "type": "record",
+                    "name": "COAG_BIRTHDATE",
+                    "fields": [
+                      {
+                        "name": "ordinal",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "type",
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "name": "length",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "precision",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "scale",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "primaryKeyPosition",
+                        "type": {
+                          "type": "int"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "COAG_EMAIL",
+                  "type": {
+                    "type": "record",
+                    "name": "COAG_EMAIL",
+                    "fields": [
+                      {
+                        "name": "ordinal",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "type",
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "name": "length",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "precision",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "scale",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "primaryKeyPosition",
+                        "type": {
+                          "type": "int"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "COAG_MOBILE_NR",
+                  "type": {
+                    "type": "record",
+                    "name": "COAG_MOBILE_NR",
+                    "fields": [
+                      {
+                        "name": "ordinal",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "type",
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "name": "length",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "precision",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "scale",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "primaryKeyPosition",
+                        "type": {
+                          "type": "int"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "COAG_PHONE_NR",
+                  "type": {
+                    "type": "record",
+                    "name": "COAG_PHONE_NR",
+                    "fields": [
+                      {
+                        "name": "ordinal",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "type",
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "name": "length",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "precision",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "scale",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "primaryKeyPosition",
+                        "type": {
+                          "type": "int"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "COAG_COUNTRY",
+                  "type": {
+                    "type": "record",
+                    "name": "COAG_COUNTRY",
+                    "fields": [
+                      {
+                        "name": "ordinal",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "type",
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "name": "length",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "precision",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "scale",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "primaryKeyPosition",
+                        "type": {
+                          "type": "int"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "COAG_CITY",
+                  "type": {
+                    "type": "record",
+                    "name": "COAG_CITY",
+                    "fields": [
+                      {
+                        "name": "ordinal",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "type",
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "name": "length",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "precision",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "scale",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "primaryKeyPosition",
+                        "type": {
+                          "type": "int"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "COAG_POSTALCODE",
+                  "type": {
+                    "type": "record",
+                    "name": "COAG_POSTALCODE",
+                    "fields": [
+                      {
+                        "name": "ordinal",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "type",
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "name": "length",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "precision",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "scale",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "primaryKeyPosition",
+                        "type": {
+                          "type": "int"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "COAG_STREET",
+                  "type": {
+                    "type": "record",
+                    "name": "COAG_STREET",
+                    "fields": [
+                      {
+                        "name": "ordinal",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "type",
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "name": "length",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "precision",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "scale",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "primaryKeyPosition",
+                        "type": {
+                          "type": "int"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "COAG_HOUSE_NR",
+                  "type": {
+                    "type": "record",
+                    "name": "COAG_HOUSE_NR",
+                    "fields": [
+                      {
+                        "name": "ordinal",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "type",
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "name": "length",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "precision",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "scale",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "primaryKeyPosition",
+                        "type": {
+                          "type": "int"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "COAG_ACTIVE",
+                  "type": {
+                    "type": "record",
+                    "name": "COAG_ACTIVE",
+                    "fields": [
+                      {
+                        "name": "ordinal",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "type",
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "name": "length",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "precision",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "scale",
+                        "type": {
+                          "type": "int"
+                        }
+                      },
+                      {
+                        "name": "primaryKeyPosition",
+                        "type": {
+                          "type": "int"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "dataSchema",
+      "type": {
+        "type": "string"
+      }
+    }
+  ]
+}

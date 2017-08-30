@@ -1,0 +1,195 @@
+{
+  "namespace": "ch.generali.copa.dataintegration.kafkastreams.landing",
+  "type": "record",
+  "name": "Agent",
+  "fields": [
+    {
+      "name": "data",
+      "type": {
+        "type": "record",
+        "name": "Data",
+        "fields": [
+          {
+            "name": "COAG_ID",
+            "type": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "COAG_FAMILY_NAME",
+            "type": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "COAG_NAME",
+            "type": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "COAG_GENDER",
+            "type": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "COAG_BIRTHDATE",
+            "type": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "COAG_EMAIL",
+            "type": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "COAG_MOBILE_NR",
+            "type": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "COAG_PHONE_NR",
+            "type": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "COAG_COUNTRY",
+            "type": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "int"
+              }
+            ]
+          },
+          {
+            "name": "COAG_CITY",
+            "type": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "COAG_POSTALCODE",
+            "type": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "COAG_STREET",
+            "type": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "COAG_HOUSE_NR",
+            "type": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "COAG_ACTIVE",
+            "type": {
+              "type": "int"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "beforeData",
+      "type": [
+        {
+          "type": "null"
+        },
+        "Data"
+      ]
+    },
+    {
+      "name": "headers",
+      "type": {
+        "type": "record",
+        "name": "Headers",
+        "fields": [
+          {
+            "name": "operation",
+            "type": {
+              "type": "enum",
+              "name": "operation",
+              "symbols": [
+                "INSERT",
+                "UPDATE",
+                "DELETE",
+                "REFRESH"
+              ]
+            }
+          },
+          {
+            "name": "changeSequence",
+            "type": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "timestamp",
+            "type": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "streamPosition",
+            "type": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "transactionId",
+            "type": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
