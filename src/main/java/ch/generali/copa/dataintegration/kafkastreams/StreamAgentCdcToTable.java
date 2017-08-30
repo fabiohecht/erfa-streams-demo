@@ -42,16 +42,12 @@ public class StreamAgentCdcToTable {
 //        System.out.println(config.stringPropertyNames());
 
         final KStreamBuilder builder = new KStreamBuilder();
-        final KStream<String, Data> agentStream = builder.stream(INPUT_TOPIC)
+        final KStream<String, AgentRecord> agentStream = builder.stream(INPUT_TOPIC)
                 .filterNot((k, v) -> ((Agent)v).getHeaders().getOperation().equals(operation.DELETE))
                 .map((k, v) -> new KeyValue<>(
-                        ((Agent)v).getData().getCOAGID(), ((Agent)v).getData()
-                ));
+                        ((Agent)v).getData().getCOAGID(), createAgentRecord(((Agent)v).getData())));
 
-        KTable<String, AgentRecord> agentTable = agentStream.groupByKey().reduce(
-                (k, v) -> new KeyValue<String, AgentRecord>(k.getCOAGID(), createAgentRecord(v));
-
-        agentTable.to(OUTPUT_TOPIC_AGENTS);
+        agentStream.to(OUTPUT_TOPIC_AGENTS);
 
         final KafkaStreams streams = new KafkaStreams(builder, config);
         // Always (and unconditionally) clean local state prior to starting the processing topology.
