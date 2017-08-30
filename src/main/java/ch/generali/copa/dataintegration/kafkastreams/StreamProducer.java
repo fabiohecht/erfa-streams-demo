@@ -58,12 +58,13 @@ public class StreamProducer {
                     .setCOAGSTREET("Bahnhofstrasse")
                     .build();
 
+            String transactionId=UUID.randomUUID().toString();
             Headers headers = Headers.newBuilder()
                     .setOperation(operation.INSERT)
                     .setChangeSequence("1")
                     .setStreamPosition("5")
                     .setTimestamp(Long.toString(new Date().getTime()))
-                    .setTransactionId(UUID.randomUUID().toString())
+                    .setTransactionId(transactionId)
                     .build();
 
             Agent agent = Agent.newBuilder()
@@ -72,7 +73,7 @@ public class StreamProducer {
                     .setHeaders(headers)
                     .build();
 
-            ProducerRecord<String, Agent> record = new ProducerRecord<>(topic, id, agent);
+            ProducerRecord<String, Agent> record = new ProducerRecord<>(topic, transactionId, agent);
             producer.send(record).get();
         }
         producer.close();

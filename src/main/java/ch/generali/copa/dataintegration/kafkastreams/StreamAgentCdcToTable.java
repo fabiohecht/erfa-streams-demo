@@ -5,6 +5,9 @@ import ch.generali.copa.dataintegration.kafkastreams.landing.AgentRecord;
 import ch.generali.copa.dataintegration.kafkastreams.landing.Data;
 import ch.generali.copa.dataintegration.kafkastreams.landing.operation;
 import io.confluent.kafka.streams.serdes.avro.GenericAvroSerde;
+import io.confluent.kafka.streams.serdes.avro.SpecificAvroDeserializer;
+import io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde;
+import org.apache.avro.generic.GenericRecord;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.common.serialization.Serdes;
@@ -32,14 +35,10 @@ public class StreamAgentCdcToTable {
 
         Properties config = loadProperties("kafka-streams.properties");
         config.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName());
-        config.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, GenericAvroSerde.class);
+        config.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, SpecificAvroSerde.class);
         config.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
-        // Records should be flushed every 10 seconds. This is less than the default
-        // in order to keep this example interactive.
-        //config.put(StreamsConfig.COMMIT_INTERVAL_MS_CONFIG, 10 * 1000);
 
-//        System.out.println(config);
-//        System.out.println(config.stringPropertyNames());
+        SpecificAvroDeserializer<Agent> agentDeserializer = new SpecificAvroDeserializer<>();
 
         final KStreamBuilder builder = new KStreamBuilder();
         final KStream<String, AgentRecord> agentStream = builder.stream(INPUT_TOPIC)
@@ -50,17 +49,7 @@ public class StreamAgentCdcToTable {
         agentStream.to(OUTPUT_TOPIC_AGENTS);
 
         final KafkaStreams streams = new KafkaStreams(builder, config);
-        // Always (and unconditionally) clean local state prior to starting the processing topology.
-        // We opt for this unconditional call here because this will make it easier for you to play around with the example
-        // when resetting the application for doing a re-run (via the Application Reset Tool,
-        // http://docs.confluent.io/current/streams/developer-guide.html#application-reset-tool).
-        //
-        // The drawback of cleaning up local state prior is that your app must rebuilt its local state from scratch, which
-        // will take time and will require reading all the state-relevant data from the Kafka cluster over the network.
-        // Thus in a production scenario you typically do not want to clean up always as we do here but rather only when it
-        // is truly needed, i.e., only under certain conditions (e.g., the presence of a command line flag for your app).
-        // See `ApplicationResetExample.java` for a production-like example.
-        streams.cleanUp();
+
         streams.start();
 
         // Add shutdown hook to respond to SIGTERM and gracefully close Kafka Streams
