@@ -4,6 +4,7 @@
   "name": "Agent",
   "fields": [
     {
+      "namespace": "ch.generali.copa.dataintegration.kafkastreams.landing.Agent",
       "name": "data",
       "type": {
         "type": "record",
