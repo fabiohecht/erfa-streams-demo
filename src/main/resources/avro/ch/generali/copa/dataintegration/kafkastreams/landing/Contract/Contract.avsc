@@ -1,0 +1,129 @@
+{
+  "namespace": "ch.generali.copa.dataintegration.kafkastreams.landing.Contract",
+  "type": "record",
+  "name": "Contract",
+  "fields": [
+    {
+      "name": "data",
+      "type": {
+        "type": "record",
+        "name": "CoreContractRecord",
+        "fields": [
+          {
+            "name": "COCO_ID",
+            "type":"int"
+          },
+          {
+            "name": "COCO_TYPE",
+            "type":"int"
+          },             {
+            "name": "COCO_COVERAGE",
+            "type":"int"
+          },             {
+            "name": "COCO_ANNUAL_PREMIUM",
+            "type":"int"
+          },
+          {
+            "name": "COCO_START_DATE",
+            "type": {
+              "type": "int",
+              "logicalType": "date"
+            }
+          },
+          {
+            "name": "COCO_END_DATE",
+            "type": {
+              "type": "int",
+              "logicalType": "date"
+            }
+          },
+          {
+            "name": "COCO_COCU_ID",
+            "type": [
+              "null",
+              "int"
+            ],
+            "default": null
+          },
+          {
+            "name": "COCO_COAG_ID",
+            "type": [
+              "null",
+              "int"
+            ],
+            "default": null
+          },
+          {
+            "name": "COCO_TOTAL_PAID_PREMIUMS",
+            "type": [
+              "null",
+              "int"
+            ],
+            "default": null
+          },
+          {
+            "name": "COCO_TOTAL_PAID_CLAIMS",
+            "type": [
+              "null",
+              "int"
+            ],
+            "default": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "beforeData",
+      "type": [
+        "null",
+        "CoreContractRecord"
+      ]
+    },
+    {
+      "name": "headers",
+      "type": {
+        "type": "record",
+        "name": "Headers",
+        "fields": [
+          {
+            "name": "operation",
+            "type": {
+              "type": "enum",
+              "name": "operation",
+              "symbols": [
+                "INSERT",
+                "UPDATE",
+                "DELETE",
+                "REFRESH"
+              ]
+            }
+          },
+          {
+            "name": "changeSequence",
+            "type": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "timestamp",
+            "type": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "streamPosition",
+            "type": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "transactionId",
+            "type": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

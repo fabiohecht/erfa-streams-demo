@@ -16,7 +16,8 @@ public class StreamProducer {
 
     private static final String CORE_AGENTS_TOPIC = "CORE_AGENTS";
     private static final String CORE_CUSTOMERS_TOPIC = "CORE_CUSTOMERS";
-    
+    private static final String CORE_CONTRACTS_TOPIC = "CORE_CONTRACTS";
+
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
@@ -34,8 +35,9 @@ public class StreamProducer {
         // props.put("compression.type", "snappy");
         // Hard coding topic too.
 
-        AgentProducer.produceExampleAgent(events, CORE_AGENTS_TOPIC, props);
-        CustomerProducer.produceExampleCustomer(events, CORE_CUSTOMERS_TOPIC, props);
+//        AgentProducer.produceExampleAgent(events, CORE_AGENTS_TOPIC, props);
+//        CustomerProducer.produceExampleCustomer(events, CORE_CUSTOMERS_TOPIC, props);
+        ContractProducer.produceExampleContract(events, CORE_CONTRACTS_TOPIC, props);
     }
 
 
