@@ -1,7 +1,7 @@
 package ch.generali.copa.dataintegration.kafkastreams.producer;
 
+import ch.generali.copa.dataintegration.kafkastreams.landing.Contract.CoreContract;
 import ch.generali.copa.dataintegration.kafkastreams.landing.Contract.CoreContractRecord;
-import ch.generali.copa.dataintegration.kafkastreams.landing.Contract.Contract;
 import ch.generali.copa.dataintegration.kafkastreams.landing.Contract.Headers;
 import ch.generali.copa.dataintegration.kafkastreams.landing.Contract.operation;
 import org.apache.kafka.clients.producer.KafkaProducer;
@@ -21,7 +21,7 @@ public class ContractProducer {
 
     static void produceExampleContract(long events, String topic, Properties props) throws InterruptedException, ExecutionException {
         //TODO I assume here that Replicate will create change events using schema like Contracts
-        Producer<String, Contract> producer = new KafkaProducer<>(props);
+        Producer<String, CoreContract> producer = new KafkaProducer<>(props);
 
         for (long i = 0; i < events; i++) {
             CoreContractRecord data = CoreContractRecord.newBuilder()
@@ -46,13 +46,13 @@ public class ContractProducer {
                     .setTransactionId(transactionId)
                     .build();
 
-            Contract contract = Contract.newBuilder()
+            CoreContract contract = CoreContract.newBuilder()
                     .setData(data)
                     .setBeforeData(null)
                     .setHeaders(headers)
                     .build();
 
-            ProducerRecord<String, Contract> record = new ProducerRecord<>(topic, transactionId, contract);
+            ProducerRecord<String, CoreContract> record = new ProducerRecord<>(topic, transactionId, contract);
             producer.send(record).get();
 
         }

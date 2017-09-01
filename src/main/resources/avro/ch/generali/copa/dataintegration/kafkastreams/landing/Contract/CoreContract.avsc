@@ -1,7 +1,7 @@
 {
   "namespace": "ch.generali.copa.dataintegration.kafkastreams.landing.Contract",
   "type": "record",
-  "name": "Contract",
+  "name": "CoreContract",
   "fields": [
     {
       "name": "data",

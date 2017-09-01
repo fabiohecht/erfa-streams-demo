@@ -1,7 +1,7 @@
 {
   "namespace": "ch.generali.copa.dataintegration.kafkastreams.landing.Customer",
   "type": "record",
-  "name": "Customer",
+  "name": "CoreCustomer",
   "fields": [
     {
       "name": "data",

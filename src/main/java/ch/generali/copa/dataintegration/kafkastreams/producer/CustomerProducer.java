@@ -1,6 +1,6 @@
 package ch.generali.copa.dataintegration.kafkastreams.producer;
 
-import ch.generali.copa.dataintegration.kafkastreams.landing.Customer.Customer;
+import ch.generali.copa.dataintegration.kafkastreams.landing.Customer.CoreCustomer;
 import ch.generali.copa.dataintegration.kafkastreams.landing.Customer.CoreCustomerRecord;
 import ch.generali.copa.dataintegration.kafkastreams.landing.Customer.Headers;
 import ch.generali.copa.dataintegration.kafkastreams.landing.Customer.operation;
@@ -21,7 +21,7 @@ public class CustomerProducer {
 
     static void produceExampleCustomer(long events, String topic, Properties props) throws InterruptedException, ExecutionException {
         //TODO I assume here that Replicate will create change events using schema like Customers
-        Producer<String, Customer> producer = new KafkaProducer<>(props);
+        Producer<String, CoreCustomer> producer = new KafkaProducer<>(props);
 
         for (long i = 0; i < events; i++) {
             String id = "1";
@@ -52,13 +52,13 @@ public class CustomerProducer {
                     .setTransactionId(transactionId)
                     .build();
 
-            Customer customer = Customer.newBuilder()
+            CoreCustomer customer = CoreCustomer.newBuilder()
                     .setData(data)
                     .setBeforeData(null)
                     .setHeaders(headers)
                     .build();
 
-            ProducerRecord<String, Customer> record = new ProducerRecord<>(topic, transactionId, customer);
+            ProducerRecord<String, CoreCustomer> record = new ProducerRecord<>(topic, transactionId, customer);
             producer.send(record).get();
 
         }

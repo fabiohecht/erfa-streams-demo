@@ -34,11 +34,11 @@ public class StreamCoreCustomersToIntegration {
     private static void startCustomerStream(Properties config) {
         final KStreamBuilder builder = new KStreamBuilder();
 
-        final KStream<String, Partner> customerStream = builder.stream(INPUT_TOPIC_CUSTOMERS)
+        final KStream<String, IntPartner> customerStream = builder.stream(INPUT_TOPIC_CUSTOMERS)
                 //TODO check what happens for a delete, do we get a null data and this would work deleting the record from a KTable referencing this topic?
-                .filterNot((k, v) -> ((Customer)v).getHeaders().getOperation().equals(operation.DELETE))
+                .filterNot((k, v) -> ((CoreCustomer)v).getHeaders().getOperation().equals(operation.DELETE))
                 .map((k, v) -> new KeyValue<>(
-                        "0_" + ((Customer)v).getData().getCOCUID(), createPartnerFromCustomer(((Customer)v).getData())));
+                        "0_" + ((CoreCustomer)v).getData().getCOCUID(), createPartnerFromCustomer(((CoreCustomer)v).getData())));
         customerStream.to(OUTPUT_TOPIC_PARTNERS);
 
         final KafkaStreams streamsCustomers = new KafkaStreams(builder, config);
@@ -49,7 +49,7 @@ public class StreamCoreCustomersToIntegration {
         Runtime.getRuntime().addShutdownHook(new Thread(streamsCustomers::close));
     }
 
-    private static Partner createPartnerFromCustomer(CoreCustomerRecord customer) {
+    private static IntPartner createPartnerFromCustomer(CoreCustomerRecord customer) {
         List<Address> addresses = new ArrayList<>();
         addresses.add(Address.newBuilder()
                 .setStreet(customer.getCOCUSTREET())
@@ -73,7 +73,7 @@ public class StreamCoreCustomersToIntegration {
                     .build();
         }
 
-        return Partner.newBuilder()
+        return IntPartner.newBuilder()
                 .setId("0_" + customer.getCOCUID())
                 .setAddresses(addresses)
                 .setPersonalData(personalData)

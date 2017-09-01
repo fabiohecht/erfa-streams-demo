@@ -1,7 +1,7 @@
 {
   "namespace": "ch.generali.copa.dataintegration.kafkastreams.integration",
   "type": "record",
-  "name": "Partner",
+  "name": "IntPartner",
   "fields": [
     {
       "name": "id",

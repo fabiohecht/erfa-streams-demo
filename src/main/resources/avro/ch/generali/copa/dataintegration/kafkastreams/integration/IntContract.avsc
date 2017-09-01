@@ -1,6 +1,6 @@
 {
   "namespace": "ch.generali.copa.dataintegration.kafkastreams.integration",
-  "name": "Contract",
+  "name": "IntContract",
   "type": "record",
   "fields": [
     {
@@ -43,16 +43,24 @@
       }
     },
     {
-      "name": "customerId",
-      "type": "int"
+      "name": "partnerIdCustomer",
+      "type": "string"
     },
     {
-      "name": "agentId",
-      "type": "int"
+      "name": "partnerIdAgent",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
     },
     {
       "name": "rentability",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ],
+      "default": null
     }
   ]
 }

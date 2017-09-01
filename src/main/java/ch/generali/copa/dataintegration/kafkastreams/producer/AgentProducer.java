@@ -18,7 +18,7 @@ public class AgentProducer {
 
     static void produceExampleAgent(long events, String topic, Properties props) throws InterruptedException, ExecutionException {
         //TODO I assume here that Replicate will create change events using schema like Agents
-        Producer<String, Agent> producer = new KafkaProducer<>(props);
+        Producer<String, CoreAgent> producer = new KafkaProducer<>(props);
 
         for (long i = 0; i < events; i++) {
             String id = "1";
@@ -48,13 +48,13 @@ public class AgentProducer {
                     .setTransactionId(transactionId)
                     .build();
 
-            Agent agent = Agent.newBuilder()
+            CoreAgent agent = CoreAgent.newBuilder()
                     .setData(data)
                     .setBeforeData(null)
                     .setHeaders(headers)
                     .build();
 
-            ProducerRecord<String, Agent> record = new ProducerRecord<>(topic, transactionId, agent);
+            ProducerRecord<String, CoreAgent> record = new ProducerRecord<>(topic, transactionId, agent);
             producer.send(record).get();
 
         }

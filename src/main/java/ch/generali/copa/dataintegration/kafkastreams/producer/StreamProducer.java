@@ -1,6 +1,5 @@
 package ch.generali.copa.dataintegration.kafkastreams.producer;
 
-import ch.generali.copa.dataintegration.kafkastreams.landing.Customer.Customer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 

@@ -3,7 +3,6 @@ package ch.generali.copa.dataintegration.kafkastreams;
 import avro.shaded.com.google.common.collect.ImmutableMap;
 import ch.generali.copa.dataintegration.kafkastreams.integration.*;
 import ch.generali.copa.dataintegration.kafkastreams.landing.Agent.*;
-import ch.generali.copa.dataintegration.kafkastreams.landing.Agent.Agent;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.KeyValue;
@@ -38,11 +37,11 @@ public class StreamCoreAgentsToIntegration {
     private static void startAgentStream(Properties config) {
         final KStreamBuilder builder = new KStreamBuilder();
 
-        final KStream<String, Partner> agentStream = builder.stream(INPUT_TOPIC_AGENTS)
+        final KStream<String, IntPartner> agentStream = builder.stream(INPUT_TOPIC_AGENTS)
                 //TODO check what happens for a delete, do we get a null data and this would work deleting the record from a KTable referencing this topic?
-                .filterNot((k, v) -> ((Agent)v).getHeaders().getOperation().equals(operation.DELETE))
+                .filterNot((k, v) -> ((CoreAgent)v).getHeaders().getOperation().equals(operation.DELETE))
                 .map((k, v) -> new KeyValue<>(
-                        "1_" + ((Agent)v).getData().getCOAGID(), createPartnerFromAgent(((Agent)v).getData())));
+                        "1_" + ((CoreAgent)v).getData().getCOAGID(), createPartnerFromAgent(((CoreAgent)v).getData())));
         agentStream.to(OUTPUT_TOPIC_PARTNERS);
 
         final KafkaStreams streamsAgents = new KafkaStreams(builder, config);
@@ -53,7 +52,7 @@ public class StreamCoreAgentsToIntegration {
         Runtime.getRuntime().addShutdownHook(new Thread(streamsAgents::close));
     }
 
-    private static Partner createPartnerFromAgent(CoreAgentRecord agent) {
+    private static IntPartner createPartnerFromAgent(CoreAgentRecord agent) {
         List<Address> addresses = new ArrayList<>();
         addresses.add(Address.newBuilder()
             .setStreet(agent.getCOAGSTREET())
@@ -72,7 +71,7 @@ public class StreamCoreAgentsToIntegration {
 
         System.out.printf("Got date %s", agent.getCOAGBIRTHDATE());
 
-        return Partner.newBuilder()
+        return IntPartner.newBuilder()
                 .setId("1_" + agent.getCOAGID())
                 .setAgent(ch.generali.copa.dataintegration.kafkastreams.integration.Agent.newBuilder()
                     .setActive(agent.getCOAGACTIVE() == 1)

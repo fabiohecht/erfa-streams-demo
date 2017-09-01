@@ -28,11 +28,11 @@ public class StreamAgentCdcToTable extends KafkaStreamWorker {
         config.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
         final KStreamBuilder builder = new KStreamBuilder();
-        final KStream<String, AgentRecord> agentStream = builder.stream(INPUT_TOPIC)
+        final KStream<String, CoreAgentRecord> agentStream = builder.stream(INPUT_TOPIC)
                 //TODO check what happens for a delete, do we get a null data and this would work deleting the record from a KTable referencing this topic?
-                .filterNot((k, v) -> ((Agent)v).getHeaders().getOperation().equals(operation.DELETE))
+                .filterNot((k, v) -> ((CoreAgent)v).getHeaders().getOperation().equals(operation.DELETE))
                 .map((k, v) -> new KeyValue<>(
-                        ((Agent)v).getData().getCOAGID(), createAgentRecord(((Agent)v).getData())));
+                        ((CoreAgent)v).getData().getCOAGID(), createAgentRecord(((CoreAgent)v).getData())));
 
         agentStream.to(OUTPUT_TOPIC_AGENTS);
 
@@ -44,9 +44,9 @@ public class StreamAgentCdcToTable extends KafkaStreamWorker {
         Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
     }
 
-    private static AgentRecord createAgentRecord(CoreAgentRecord source) {
+    private static CoreAgentRecord createAgentRecord(CoreAgentRecord source) {
         //TODO check how we can reuse parts of the avro scheme
-        return AgentRecord.newBuilder()
+        return CoreAgentRecord.newBuilder()
                 .setCOAGMOBILENR(source.getCOAGMOBILENR())
                 .setCOAGACTIVE(source.getCOAGACTIVE())
                 .setCOAGHOUSENR(source.getCOAGHOUSENR())
