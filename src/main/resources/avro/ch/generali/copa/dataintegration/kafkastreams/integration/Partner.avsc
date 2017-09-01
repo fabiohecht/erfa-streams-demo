@@ -3,19 +3,43 @@
   "type": "record",
   "name": "Partner",
   "fields": [
-    {"name": "id", "type": "long"},
     {
-      "name": "language",
-      "type": {
-        "name": "Language",
-        "type": "enum",
-        "symbols": [
-          "de",
-          "fr",
-          "it",
-          "en"
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "agent",
+      "type": [
+        "null",
+      {
+        "name": "Agent",
+        "type": "record",
+        "fields": [
+          {
+            "name": "active",
+            "type": "boolean"
+          }
         ]
       }
+        ],
+      "default": null
+    },
+    {
+      "name": "language",
+      "type": [
+        "null",
+        {
+          "name": "Language",
+          "type": "enum",
+          "symbols": [
+            "de",
+            "fr",
+            "it",
+            "en"
+          ]
+        }
+      ],
+      "default": null
     },
     {
       "name": "addresses",
@@ -44,7 +68,9 @@
             },
             {
               "name": "country",
-              "type": {
+              "type": [
+                "null",
+                {
                 "name": "Country",
                 "type": "enum",
                 "symbols": [
@@ -54,11 +80,80 @@
                   "IT",
                   "AT"
                 ]
-              }
+              }],
+              "default": null
             }
           ]
         }
       }
+    },
+    {
+      "name": "personalData",
+      "type": [
+        {
+          "name": "NaturalPerson",
+          "type": "record",
+          "fields": [
+            {
+              "name": "familyName",
+              "type": "string"
+            },
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "nationality",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "birthdate",
+              "type": {
+                "type": "int",
+                "logicalType": "date"
+              }
+            },
+            {
+              "name": "title",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "gender",
+              "type": [
+                "null",
+                {
+                    "name": "Gender",
+                    "type": "enum",
+                    "symbols": [
+                      "F",
+                      "M"
+                    ]
+
+                }
+              ],
+              "default": null
+            }
+          ]
+        },
+        {
+          "name": "LegalEntity",
+          "type": "record",
+          "fields": [
+            {
+              "name": "companyName",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

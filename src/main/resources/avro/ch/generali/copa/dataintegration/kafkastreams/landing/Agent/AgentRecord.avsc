@@ -1,5 +1,5 @@
 {
-  "namespace": "ch.generali.copa.dataintegration.kafkastreams.landing",
+  "namespace": "ch.generali.copa.dataintegration.kafkastreams.landing.Agent",
   "type": "record",
   "name": "AgentRecord",
   "fields": [

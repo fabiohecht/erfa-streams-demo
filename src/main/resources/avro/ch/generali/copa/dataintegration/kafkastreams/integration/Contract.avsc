@@ -1,0 +1,52 @@
+{
+  "namespace": "ch.generali.copa.dataintegration.kafkastreams.integration",
+  "name": "Contract",
+  "type": "record",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "type",
+      "type": {
+        "name": "ContractType",
+        "type": "enum",
+        "symbols": [
+          "life",
+          "car",
+          "house",
+          "legal"
+        ]
+      }
+    },
+    {
+      "name": "coverage",
+      "type": "int"
+    },
+    {
+      "name": "annualPremium",
+      "type": "int"
+    },
+    {
+      "name": "startDate",
+      "type": "int"
+    },
+    {
+      "name": "endDate",
+      "type": "int"
+    },
+    {
+      "name": "customerId",
+      "type": "int"
+    },
+    {
+      "name": "agentId",
+      "type": "int"
+    },
+    {
+      "name": "rentability",
+      "type": "int"
+    }
+  ]
+}

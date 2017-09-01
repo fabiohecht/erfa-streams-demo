@@ -1,14 +1,13 @@
 {
-  "namespace": "ch.generali.copa.dataintegration.kafkastreams.landing",
+  "namespace": "ch.generali.copa.dataintegration.kafkastreams.landing.Agent",
   "type": "record",
   "name": "Agent",
   "fields": [
     {
-      "namespace": "ch.generali.copa.dataintegration.kafkastreams.landing.Agent",
       "name": "data",
       "type": {
         "type": "record",
-        "name": "Data",
+        "name": "CoreAgentRecord",
         "fields": [
           {
             "name": "COAG_ID",
@@ -143,7 +142,7 @@
         {
           "type": "null"
         },
-        "Data"
+        "CoreAgentRecord"
       ]
     },
     {
