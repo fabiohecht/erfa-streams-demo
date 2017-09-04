@@ -9,8 +9,6 @@ import org.apache.kafka.streams.KeyValue;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.kstream.KStream;
 import org.apache.kafka.streams.kstream.KStreamBuilder;
-import org.joda.time.LocalDate;
-import org.joda.time.format.DateTimeFormat;
 
 import java.util.*;
 

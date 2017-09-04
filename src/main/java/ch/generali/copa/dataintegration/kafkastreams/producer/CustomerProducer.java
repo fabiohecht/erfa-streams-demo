@@ -23,15 +23,15 @@ public class CustomerProducer {
         //TODO I assume here that Replicate will create change events using schema like Customers
         Producer<String, CoreCustomer> producer = new KafkaProducer<>(props);
 
-        for (long i = 0; i < events; i++) {
-            String id = "1";
+        for (int i = 0; i < 1000; i++) {
+            String id = Integer.toString(i);
             CoreCustomerRecord data = CoreCustomerRecord.newBuilder()
                     .setCOCUID(id)
                     .setCOCUTYP(1)
-                    .setCOCUFAMILYNAME("Doe")
+                    .setCOCUFAMILYNAME("Doe "+ i)
                     .setCOCUMOBILENR("079 555 44 75")
                     .setCOCUBIRTHDATE(new LocalDate(1980, 12, 16))
-                    .setCOCUCITY("Adliswil")
+                    .setCOCUCITY("Adliswil "+ i)
                     .setCOCUCOUNTRY("CH")
                     .setCOCUEMAILPRIVATE("doe@private.com")
                     .setCOCUEMAILWORK("doe@work.com")

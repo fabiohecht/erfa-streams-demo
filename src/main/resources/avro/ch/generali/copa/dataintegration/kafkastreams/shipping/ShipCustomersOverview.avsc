@@ -1,0 +1,27 @@
+{
+  "namespace": "ch.generali.copa.dataintegration.kafkastreams.shipping",
+  "name": "ShipCustomersOverview",
+  "type": "record",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "numberOfContracts",
+      "type": "long"
+    },
+    {
+      "name": "totalRentability",
+      "type": "long"
+    },
+    {
+      "name": "numberOfAgents",
+      "type": "long"
+    },
+    {
+      "name": "vip",
+      "type": "boolean"
+    }
+  ]
+}

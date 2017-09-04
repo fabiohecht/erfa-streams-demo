@@ -35,8 +35,8 @@ public class StreamProducer {
         // Hard coding topic too.
 
 //        AgentProducer.produceExampleAgent(events, CORE_AGENTS_TOPIC, props);
-//        CustomerProducer.produceExampleCustomer(events, CORE_CUSTOMERS_TOPIC, props);
-        ContractProducer.produceExampleContract(events, CORE_CONTRACTS_TOPIC, props);
+        CustomerProducer.produceExampleCustomer(events, CORE_CUSTOMERS_TOPIC, props);
+//        ContractProducer.produceExampleContract(events, CORE_CONTRACTS_TOPIC, props);
     }
 
 

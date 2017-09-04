@@ -58,27 +58,26 @@ public class StreamCoreCustomersToIntegration {
                 .setCity(customer.getCOCUCITY())
                 .build());
 
-        Object personalData;
+        IntPartner.Builder partnerBuilder = IntPartner.newBuilder()
+                .setId("0_" + customer.getCOCUID())
+                .setAddresses(addresses);
+
         if (customer.getCOCUTYP()==1) {
-            personalData = NaturalPerson.newBuilder()
-                    .setFamilyName(customer.getCOCUFAMILYNAME())
-                    .setName(customer.getCOCUNAME())
-                    .setBirthdate(customer.getCOCUBIRTHDATE())
-                    .setGender(customer.getCOCUGENDER().equals("M") ? Gender.M : Gender.F)
-                    .build();
+            NaturalPerson naturalPerson = NaturalPerson.newBuilder()
+                .setFamilyName(customer.getCOCUFAMILYNAME())
+                .setName(customer.getCOCUNAME())
+                .setBirthdate(customer.getCOCUBIRTHDATE())
+                .setGender(customer.getCOCUGENDER().equals("M") ? Gender.M : Gender.F)
+                .build();
+            partnerBuilder.setNaturalPerson(naturalPerson);
         }
         else {
-            personalData = LegalEntity.newBuilder()
-                    .setCompanyName(customer.getCOCUCOMPANYNAME())
-                    .build();
+            LegalEntity legalEntity = LegalEntity.newBuilder()
+                .setCompanyName(customer.getCOCUCOMPANYNAME())
+                .build();
+            partnerBuilder.setLegalEntity(legalEntity);
         }
 
-        return IntPartner.newBuilder()
-                .setId("0_" + customer.getCOCUID())
-                .setAddresses(addresses)
-                .setPersonalData(personalData)
-                .build();
-
+        return partnerBuilder.build();
     }
-
 }

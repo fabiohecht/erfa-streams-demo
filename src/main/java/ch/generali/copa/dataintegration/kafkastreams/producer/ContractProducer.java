@@ -23,12 +23,12 @@ public class ContractProducer {
         //TODO I assume here that Replicate will create change events using schema like Contracts
         Producer<String, CoreContract> producer = new KafkaProducer<>(props);
 
-        for (long i = 0; i < events; i++) {
+        for (int i = 0; i < 1000; i++) {
             CoreContractRecord data = CoreContractRecord.newBuilder()
-                    .setCOCOID(23)
-                    .setCOCOTYPE(2)
-                    .setCOCOCOVERAGE(100000)
-                    .setCOCOANNUALPREMIUM(1001)
+                    .setCOCOID(i)
+                    .setCOCOTYPE(3)
+                    .setCOCOCOVERAGE(100000+i)
+                    .setCOCOANNUALPREMIUM(100+i)
                     .setCOCOSTARTDATE(new LocalDate(2017, 9, 1))
                     .setCOCOENDDATE(new LocalDate(2020, 12, 31))
                     .setCOCOCOCUID(1)

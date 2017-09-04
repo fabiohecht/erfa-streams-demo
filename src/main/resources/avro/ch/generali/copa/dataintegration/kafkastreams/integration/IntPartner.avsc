@@ -11,17 +11,17 @@
       "name": "agent",
       "type": [
         "null",
-      {
-        "name": "Agent",
-        "type": "record",
-        "fields": [
-          {
-            "name": "active",
-            "type": "boolean"
-          }
-        ]
-      }
-        ],
+        {
+          "name": "Agent",
+          "type": "record",
+          "fields": [
+            {
+              "name": "active",
+              "type": "boolean"
+            }
+          ]
+        }
+      ],
       "default": null
     },
     {
@@ -71,16 +71,17 @@
               "type": [
                 "null",
                 {
-                "name": "Country",
-                "type": "enum",
-                "symbols": [
-                  "CH",
-                  "DE",
-                  "FR",
-                  "IT",
-                  "AT"
-                ]
-              }],
+                  "name": "Country",
+                  "type": "enum",
+                  "symbols": [
+                    "CH",
+                    "DE",
+                    "FR",
+                    "IT",
+                    "AT"
+                  ]
+                }
+              ],
               "default": null
             }
           ]
@@ -88,8 +89,9 @@
       }
     },
     {
-      "name": "personalData",
+      "name": "naturalPerson",
       "type": [
+        "null",
         {
           "name": "NaturalPerson",
           "type": "record",
@@ -130,19 +132,25 @@
               "type": [
                 "null",
                 {
-                    "name": "Gender",
-                    "type": "enum",
-                    "symbols": [
-                      "F",
-                      "M"
-                    ]
-
+                  "name": "Gender",
+                  "type": "enum",
+                  "symbols": [
+                    "F",
+                    "M"
+                  ]
                 }
               ],
               "default": null
             }
           ]
-        },
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "legalEntity",
+      "type": [
+        "null",
         {
           "name": "LegalEntity",
           "type": "record",
@@ -153,7 +161,8 @@
             }
           ]
         }
-      ]
+      ],
+      "default": null
     }
   ]
 }

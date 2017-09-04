@@ -2,27 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb99b2eb-9d45-4292-b7f4-cc9922e4609b" name="Default" comment="dummy producer works">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/KafkaStreamWorker.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamAgentToIntegration.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_esotericsoftware_kryo_shaded_4_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_esotericsoftware_minlog_1_3_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_javaewah_JavaEWAH_1_1_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_twitter_algebird_core_2_11_0_13_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_twitter_chill_2_11_0_9_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_twitter_chill_java_0_9_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_kafka_2_11_test_0_11_0_0_cp1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_modules_scala_xml_2_11_1_0_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_library_2_11_8.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_reflect_2_11_8.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_scalactic_scalactic_2_11_2_2_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_scalatest_scalatest_2_11_2_2_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_typelevel_algebra_2_11_0_7_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_typelevel_cats_kernel_2_11_0_9_0.xml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/shipping/ShipCustomersOverview.avsc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kafkastreams.iml" afterPath="$PROJECT_DIR$/kafkastreams.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamAgentCdcToTable.java" afterPath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamAgentCdcToTable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamCoreContractsToIntegration.java" afterPath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamCoreContractsToIntegration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamCoreCustomersToIntegration.java" afterPath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamCoreCustomersToIntegration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamIntegrationToShipping.java" afterPath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamIntegrationToShipping.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/ContractProducer.java" afterPath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/ContractProducer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/CustomerProducer.java" afterPath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/CustomerProducer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/StreamProducer.java" afterPath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/StreamProducer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/integration/IntPartner.avsc" afterPath="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/integration/IntPartner.avsc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/kafka-streams.properties" afterPath="$PROJECT_DIR$/src/main/resources/kafka-streams.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,21 +27,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StreamAgentCdcToTable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamAgentCdcToTable.java">
+      <file leaf-file-name="StreamIntegrationToShipping.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamIntegrationToShipping.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="50" column="5" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="50" selection-end-column="5" />
+            <state relative-caret-position="592">
+              <caret line="52" column="50" lean-forward="false" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KafkaStreamWorker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/KafkaStreamWorker.java">
+      <file leaf-file-name="CustomerProducer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/CustomerProducer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            <state relative-caret-position="336">
+              <caret line="33" column="43" lean-forward="false" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StreamCoreAgentsToIntegration.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamCoreAgentsToIntegration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="67" column="32" lean-forward="true" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,23 +59,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StreamAgentToIntegration.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamAgentToIntegration.java">
+      <file leaf-file-name="ContractProducer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/ContractProducer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="49" column="5" lean-forward="false" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+            <state relative-caret-position="400">
+              <caret line="37" column="29" lean-forward="false" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Partner.avsc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/integration/Partner.avsc">
+      <file leaf-file-name="StreamProducer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/StreamProducer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+            <state relative-caret-position="496">
+              <caret line="37" column="47" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShipCustomersOverview.avsc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/shipping/ShipCustomersOverview.avsc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="23" column="23" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StreamCoreContractsToIntegration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamCoreContractsToIntegration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1008">
+              <caret line="75" column="5" lean-forward="false" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StreamCoreCustomersToIntegration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamCoreCustomersToIntegration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="640">
+              <caret line="51" column="47" lean-forward="false" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -91,23 +124,46 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>INCO_</find>
-      <find>examples</find>
-      <find>&quot;Country&quot;</find>
-      <find>serde</find>
+      <find>enu</find>
+      <find>eu</find>
+      <find>e</find>
       <find>enum</find>
-      <find>lineage</find>
-      <find>operation</find>
-      <find>coag_id</find>
-      <find>newbuil</find>
-      <find>changese</find>
-      <find>coag</find>
-      <find>generic</find>
-      <find>scala</find>
+      <find>enum&quot;</find>
+      <find>&quot;enum&quot;</find>
+      <find>data</find>
+      <find>countr</find>
+      <find>&quot;Data&quot;</find>
+      <find>l</find>
+      <find>logi</find>
+      <find>logic</find>
+      <find>logica</find>
+      <find>logical</find>
+      <find>localda</find>
+      <find>setcoag</find>
+      <find>custom</find>
+      <find>agent</find>
+      <find>compa</find>
+      <find>date</find>
+      <find>customer</find>
+      <find>agentpart</find>
+      <find>reduce</find>
+      <find>phone</find>
+      <find>contractsStream</find>
+      <find>shippin</find>
+      <find>print</find>
+      <find>in con</find>
+      <find>offset</find>
+      <find>-3</find>
     </findStrings>
     <replaceStrings>
       <replace>INAD_</replace>
       <replace>INAG_</replace>
+      <replace>Customer</replace>
+      <replace>setCOCU</replace>
+      <replace>customer</replace>
+      <replace>contracts</replace>
+      <replace>COCU_</replace>
+      <replace>contract</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -121,13 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/avro/Addresses.avsc" />
-        <option value="$PROJECT_DIR$/src/main/avro/INTE_ADDRESSES.avsc" />
-        <option value="$PROJECT_DIR$/src/main/avro/AgentsSchema.avsc" />
-        <option value="$PROJECT_DIR$/src/main/avro/PartnersSchema.avsc" />
-        <option value="$PROJECT_DIR$/src/main/avro/ExamplePartner.json" />
-        <option value="$PROJECT_DIR$/src/main/avro/CoreContractsSchema.avsc" />
-        <option value="$PROJECT_DIR$/src/main/avro/Country.avsc" />
         <option value="$PROJECT_DIR$/src/main/avro/Language.avsc" />
         <option value="$PROJECT_DIR$/src/main/avro/Partner.avsc" />
         <option value="$PROJECT_DIR$/src/main/avro/Address.avsc" />
@@ -140,18 +189,45 @@
         <option value="$PROJECT_DIR$/src/main/resources/avro/Agent.avsc" />
         <option value="$PROJECT_DIR$/src/main/resources/avro/ReplicateMessage.avsc" />
         <option value="$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/landing/Agent.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/kafka-streams.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/avro/AgentTable.avsc" />
         <option value="$PROJECT_DIR$/src/main/resources/avro/AgentRecord.avsc" />
         <option value="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamAgent.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Agent.avsc" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamProducer.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/KafkaStream.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/KafkaStreamWorker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamAgentCdcToTable.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Contract.avsc" />
+        <option value="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/integration/Address.avsc" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Customers.avsc" />
+        <option value="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Agent.avsc" />
+        <option value="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Customer.avsc" />
+        <option value="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Agent/AgentRecord.avsc" />
+        <option value="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Agent/Agent.avsc" />
         <option value="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamAgentToIntegration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamCoreToIntegration.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/integration/Partner.avsc" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamProducer.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Customer/Customer.avsc" />
+        <option value="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/integration/Contract.avsc" />
+        <option value="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Contract/Contract.avsc" />
+        <option value="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Customer/CoreCustomer.avsc" />
+        <option value="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Contract/CoreContract.avsc" />
+        <option value="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Agent/CoreAgent.avsc" />
+        <option value="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Agent/CoreAgentRecord.avsc" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamAgentCdcToTable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/AgentProducer.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/integration/IntContract.avsc" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamCoreCustomersToIntegration.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/shipping/ShipCustomersOverview.avsc" />
+        <option value="$PROJECT_DIR$/src/main/resources/kafka-streams.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/integration/IntPartner.avsc" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamCoreContractsToIntegration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamCoreAgentsToIntegration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/ContractProducer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/CustomerProducer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/StreamProducer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamIntegrationToShipping.java" />
       </list>
     </option>
   </component>
@@ -205,6 +281,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -313,7 +390,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="landing" />
+              <option name="myItemId" value="shipping" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kafkastreams" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kafkastreams" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kafkastreams" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -390,28 +497,70 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kafkastreams" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="producer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kafkastreams" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kafkastreams" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assembly" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="JSON" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.47011495" />
+    <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Agent" />
+      <recent name="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Customer" />
       <recent name="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/integration" />
       <recent name="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ch.generali.copa.dataintegration.kafkastreams" />
+      <recent name="ch.generali.copa.dataintegration.kafkastreams.producer" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/shipping" />
+      <recent name="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Contract" />
       <recent name="$PROJECT_DIR$/src/main" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -428,15 +577,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StreamProducer">
+  <component name="RunManager" selected="Application.StreamCoreCustomersToIntegration">
     <configuration default="false" name="StreamProducer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="ch.generali.copa.dataintegration.kafkastreams.*" />
+          <option name="PATTERN" value="ch.generali.copa.dataintegration.kafkastreams.producer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="ch.generali.copa.dataintegration.kafkastreams.StreamProducer" />
+      <option name="MAIN_CLASS_NAME" value="ch.generali.copa.dataintegration.kafkastreams.producer.StreamProducer" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -449,14 +598,74 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="StreamAgentCdcToTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="StreamCoreAgentsToIntegration" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ch.generali.copa.dataintegration.kafkastreams.producer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="ch.generali.copa.dataintegration.kafkastreams.StreamCoreAgentsToIntegration" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="kafkastreams" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="StreamCoreCustomersToIntegration" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ch.generali.copa.dataintegration.kafkastreams.producer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="ch.generali.copa.dataintegration.kafkastreams.StreamCoreCustomersToIntegration" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="kafkastreams" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="StreamCoreContractsToIntegration" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="ch.generali.copa.dataintegration.kafkastreams.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="ch.generali.copa.dataintegration.kafkastreams.StreamAgentCdcToTable" />
+      <option name="MAIN_CLASS_NAME" value="ch.generali.copa.dataintegration.kafkastreams.StreamCoreContractsToIntegration" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="kafkastreams" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="StreamIntegrationToShipping" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ch.generali.copa.dataintegration.kafkastreams.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="ch.generali.copa.dataintegration.kafkastreams.StreamIntegrationToShipping" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -633,14 +842,20 @@
       <listeners />
       <method />
     </configuration>
-    <list size="2">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.StreamProducer" />
-      <item index="1" class="java.lang.String" itemvalue="Application.StreamAgentCdcToTable" />
+      <item index="1" class="java.lang.String" itemvalue="Application.StreamCoreAgentsToIntegration" />
+      <item index="2" class="java.lang.String" itemvalue="Application.StreamCoreCustomersToIntegration" />
+      <item index="3" class="java.lang.String" itemvalue="Application.StreamCoreContractsToIntegration" />
+      <item index="4" class="java.lang.String" itemvalue="Application.StreamIntegrationToShipping" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.StreamAgentCdcToTable" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.StreamCoreCustomersToIntegration" />
         <item index="1" class="java.lang.String" itemvalue="Application.StreamProducer" />
+        <item index="2" class="java.lang.String" itemvalue="Application.StreamIntegrationToShipping" />
+        <item index="3" class="java.lang.String" itemvalue="Application.StreamCoreContractsToIntegration" />
+        <item index="4" class="java.lang.String" itemvalue="Application.StreamCoreAgentsToIntegration" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
@@ -649,6 +864,12 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -693,33 +914,68 @@
       <option name="project" value="LOCAL" />
       <updated>1504100953832</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="deleted .idea files that should not have been checked in, updated .gitignore">
+      <created>1504158734865</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1504158734865</updated>
+    </task>
+    <task id="LOCAL-00007" summary="customer and agent work">
+      <created>1504256797604</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1504256797604</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added core_contracts">
+      <created>1504257928688</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1504257928688</updated>
+    </task>
+    <task id="LOCAL-00009" summary="contracts in integration">
+      <created>1504263374892</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1504263374892</updated>
+    </task>
+    <task id="LOCAL-00010" summary="late night changes">
+      <created>1504509713585</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1504509713585</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="24" width="1551" height="876" extended-state="6" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298153" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15506959" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4656992" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49076518" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298153" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12793876" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38390502" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3411514" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298153" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22266401" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18621604" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20344599" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17163685" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39973614" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29957357" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29317698" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -731,392 +987,396 @@
     <MESSAGE value="working on first stream" />
     <MESSAGE value="wip" />
     <MESSAGE value="first stream works" />
-    <option name="LAST_COMMIT_MESSAGE" value="first stream works" />
+    <MESSAGE value="deleted .idea files that should not have been checked in, updated .gitignore" />
+    <MESSAGE value="customer and agent work" />
+    <MESSAGE value="added core_contracts" />
+    <MESSAGE value="contracts in integration" />
+    <MESSAGE value="late night changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="late night changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="kafkastreams" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="kafkastreams" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/confluent/examples/streams/SessionWindowsExample.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/confluent/examples/streams/SumLambdaExample.java" />
-    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/Object.class">
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/landing/Agent/Data.java" />
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/landing/Agent/Agent.java" />
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/landing/Customer/Customer.java" />
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/integration/NaturalPerson.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/confluent/examples/streams/ApplicationResetExample.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/io/confluent/examples/streams/zookeeper/ZooKeeperEmbedded.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/io/confluent/examples/streams/utils/PriorityQueueSerdeTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/io/confluent/examples/streams/interactivequeries/kafkamusic/KafkaMusicExampleTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/avro/ContractsSchema.avsc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="127">
+          <caret line="468" column="91" lean-forward="false" selection-start-line="468" selection-start-column="91" selection-end-line="468" selection-end-column="91" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/avro/CommunicationWays.avsc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/avro/AgentsSchema.avsc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/avro/ExamplePartner.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/avro/CustomersSchema.avsc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/avro/CoreContractsSchema.avsc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/avro/NaturalPersonsSchema.avsc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/avro/LegalEntities.avsc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/avro/Country.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="39" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="4" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/avro/Language.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="34" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="4" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/avro/Address.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="12" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/confluent/kafka-avro-serializer/3.3.0/kafka-avro-serializer-3.3.0.jar!/io/confluent/kafka/serializers/AbstractKafkaAvroSerDeConfig.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="15" column="80" lean-forward="false" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/integration/Partners.java">
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/landing/Agent/Headers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/integration/Partner.java">
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/landing/Customer/CoreCustomerRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="245">
+          <caret line="1026" column="101" lean-forward="false" selection-start-line="1026" selection-start-column="101" selection-end-line="1026" selection-end-column="101" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/landing/Headers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="300" column="148" lean-forward="true" selection-start-line="300" selection-start-column="148" selection-end-line="300" selection-end-column="157" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="1010" column="33" lean-forward="false" selection-start-line="1010" selection-start-column="25" selection-end-line="1010" selection-end-column="33" />
-          <folding>
-            <element signature="n#!!block;n#messageSchema_unescaped#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/confluent/kafka-streams-avro-serde/3.3.0/kafka-streams-avro-serde-3.3.0.jar!/io/confluent/kafka/streams/serdes/avro/GenericAvroSerde.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="17" column="29" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="17" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1.jar!/org/apache/kafka/streams/StreamsConfig.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="59" column="82" lean-forward="false" selection-start-line="59" selection-start-column="65" selection-end-line="59" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/replicate/COAG_ACTIVE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/avro/ReplicateMessage.avsc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2992">
-          <caret line="17" column="11" lean-forward="true" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1.jar!/org/apache/kafka/streams/kstream/KStreamBuilder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/landing/Data.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="157" column="26" lean-forward="false" selection-start-line="157" selection-start-column="26" selection-end-line="157" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/Override.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1.jar!/org/apache/kafka/streams/kstream/KGroupedStream.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="36" column="17" lean-forward="false" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/landing/Agent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1648">
-          <caret line="114" column="5" lean-forward="false" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1.jar!/org/apache/kafka/streams/kstream/Reducer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1-sources.jar!/org/apache/kafka/streams/kstream/KTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="958" column="9" lean-forward="false" selection-start-line="958" selection-start-column="9" selection-end-line="958" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/landing/AgentRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="390" column="90" lean-forward="false" selection-start-line="390" selection-start-column="90" selection-end-line="390" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/avro/avro/1.8.2/avro-1.8.2-sources.jar!/org/apache/avro/generic/GenericRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/landing/operation.java">
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/landing/Agent/operation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
-          <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="21" />
-          <folding />
+          <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Customer/CoreCustomer.avsc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="48">
+          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/confluent/kafka-streams-avro-serde/3.3.0/kafka-streams-avro-serde-3.3.0.jar!/io/confluent/kafka/streams/serdes/avro/SpecificAvroDeserializer.class">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Contract/CoreContract.avsc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="27" column="47" lean-forward="false" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-          <folding>
-            <element signature="e#676#677#0" expanded="true" />
-            <element signature="e#732#733#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="48">
+          <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamProducer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Agent/CoreAgent.avsc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="75" column="92" lean-forward="false" selection-start-line="75" selection-start-column="92" selection-end-line="75" selection-end-column="92" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="48">
+          <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Agent/CoreAgentRecord.avsc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-804">
-          <caret line="163" column="0" lean-forward="false" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/Agent.avsc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="79" lean-forward="false" selection-start-line="6" selection-start-column="79" selection-end-line="6" selection-end-column="79" />
-          <folding>
-            <element signature="e#2918#3038#0" expanded="false" />
-            <element signature="e#3085#3996#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/landing/AgentRecord.avsc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="69" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1-sources.jar!/org/apache/kafka/streams/kstream/KStreamBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/kafka-streams.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/integration/Partner.avsc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="48">
+          <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/KafkaStreamWorker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
+        <state relative-caret-position="112">
           <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamAgentCdcToTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="50" column="5" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="50" selection-end-column="5" />
+        <state relative-caret-position="94">
+          <caret line="48" column="19" lean-forward="false" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/landing/Contract/operation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/landing/Contract/CoreContractRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/AgentProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="50" column="16" lean-forward="false" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamAgentToIntegration.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="49" column="5" lean-forward="false" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+        <state relative-caret-position="432">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/integration/IntContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="252" column="26" lean-forward="false" selection-start-line="252" selection-start-column="26" selection-end-line="252" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-clients/0.11.0.0-cp1/kafka-clients-0.11.0.0-cp1-sources.jar!/org/apache/kafka/common/serialization/StringDeserializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1-sources.jar!/org/apache/kafka/streams/kstream/ValueJoiner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="51" column="7" lean-forward="false" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1-sources.jar!/org/apache/kafka/streams/kstream/Aggregator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="46" column="51" lean-forward="false" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/shipping/ShipCustomersOverview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="136" column="14" lean-forward="false" selection-start-line="136" selection-start-column="14" selection-end-line="136" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1-sources.jar!/org/apache/kafka/streams/processor/TopologyBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="920" column="46" lean-forward="false" selection-start-line="920" selection-start-column="46" selection-end-line="920" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1-sources.jar!/org/apache/kafka/streams/kstream/KStreamBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="69" column="32" lean-forward="false" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/confluent/kafka-avro-serializer/3.3.0/kafka-avro-serializer-3.3.0.jar!/io/confluent/kafka/serializers/KafkaAvroDeserializer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/confluent/kafka-avro-serializer/3.3.0/kafka-avro-serializer-3.3.0.jar!/io/confluent/kafka/serializers/AbstractKafkaAvroDeserializer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/integration/IntContract.avsc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/kafka-streams.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/ch/generali/copa/dataintegration/kafkastreams/integration/IntPartner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="692" column="0" lean-forward="false" selection-start-line="692" selection-start-column="0" selection-end-line="692" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/avro/avro/1.8.2/avro-1.8.2-sources.jar!/org/apache/avro/specific/SpecificDatumWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1-sources.jar!/org/apache/kafka/streams/processor/internals/StreamThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-256">
+          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1-sources.jar!/org/apache/kafka/streams/kstream/internals/KTableMapValues.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1-sources.jar!/org/apache/kafka/streams/processor/internals/ProcessorContextImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1-sources.jar!/org/apache/kafka/streams/processor/internals/ProcessorNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1-sources.jar!/org/apache/kafka/streams/kstream/KTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="959" column="35" lean-forward="false" selection-start-line="958" selection-start-column="12" selection-end-line="959" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-clients/0.11.0.0-cp1/kafka-clients-0.11.0.0-cp1-sources.jar!/org/apache/kafka/common/serialization/Serdes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="177" column="28" lean-forward="false" selection-start-line="177" selection-start-column="19" selection-end-line="177" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/integration/IntPartner.avsc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="133" column="17" lean-forward="false" selection-start-line="133" selection-start-column="17" selection-end-line="133" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1-sources.jar!/org/apache/kafka/streams/kstream/Predicate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="42" column="12" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/shipping/ShipCustomersOverview.avsc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="23" column="23" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1-sources.jar!/org/apache/kafka/streams/kstream/KStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="419" column="18" lean-forward="false" selection-start-line="419" selection-start-column="18" selection-end-line="419" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1-sources.jar!/org/apache/kafka/streams/StreamsConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="504" column="80" lean-forward="false" selection-start-line="504" selection-start-column="56" selection-end-line="504" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1-sources.jar!/org/apache/kafka/streams/kstream/KGroupedStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="607">
+          <caret line="399" column="17" lean-forward="false" selection-start-line="399" selection-start-column="17" selection-end-line="399" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/0.11.0.0-cp1/kafka-streams-0.11.0.0-cp1-sources.jar!/org/apache/kafka/streams/KeyValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="54" column="44" lean-forward="false" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamCoreContractsToIntegration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="75" column="5" lean-forward="false" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/ContractProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="37" column="29" lean-forward="false" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/CustomerProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="33" column="43" lean-forward="false" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/StreamProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="37" column="47" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamCoreCustomersToIntegration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="51" column="47" lean-forward="false" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamIntegrationToShipping.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="52" column="50" lean-forward="false" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamCoreAgentsToIntegration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="67" column="32" lean-forward="true" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
