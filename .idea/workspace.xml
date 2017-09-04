@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb99b2eb-9d45-4292-b7f4-cc9922e4609b" name="Default" comment="dummy producer works">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/shipping/ShipCustomersOverview.avsc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+    <list default="true" id="bb99b2eb-9d45-4292-b7f4-cc9922e4609b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kafkastreams.iml" afterPath="$PROJECT_DIR$/kafkastreams.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamCoreContractsToIntegration.java" afterPath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamCoreContractsToIntegration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamCoreCustomersToIntegration.java" afterPath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamCoreCustomersToIntegration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamIntegrationToShipping.java" afterPath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/StreamIntegrationToShipping.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/ContractProducer.java" afterPath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/ContractProducer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/CustomerProducer.java" afterPath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/CustomerProducer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/StreamProducer.java" afterPath="$PROJECT_DIR$/src/main/java/ch/generali/copa/dataintegration/kafkastreams/producer/StreamProducer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/integration/IntPartner.avsc" afterPath="$PROJECT_DIR$/src/main/resources/avro/ch/generali/copa/dataintegration/kafkastreams/integration/IntPartner.avsc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/kafka-streams.properties" afterPath="$PROJECT_DIR$/src/main/resources/kafka-streams.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -949,7 +938,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504509713585</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="dummy producer works">
+      <created>1504509830071</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1504509830071</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -960,11 +956,11 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12793876" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38390502" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38390502" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3411514" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298153" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20344599" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20344599" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17163685" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -983,7 +979,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="development in progress" />
-    <MESSAGE value="dummy producer works" />
     <MESSAGE value="working on first stream" />
     <MESSAGE value="wip" />
     <MESSAGE value="first stream works" />
@@ -992,7 +987,8 @@
     <MESSAGE value="added core_contracts" />
     <MESSAGE value="contracts in integration" />
     <MESSAGE value="late night changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="late night changes" />
+    <MESSAGE value="dummy producer works" />
+    <option name="LAST_COMMIT_MESSAGE" value="dummy producer works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1039,6 +1035,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="1026" column="101" lean-forward="false" selection-start-line="1026" selection-start-column="101" selection-end-line="1026" selection-end-column="101" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1108,6 +1105,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1133,6 +1131,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1140,6 +1139,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="252" column="26" lean-forward="false" selection-start-line="252" selection-start-column="26" selection-end-line="252" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1210,6 +1210,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1274,6 +1275,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="133" column="17" lean-forward="false" selection-start-line="133" selection-start-column="17" selection-end-line="133" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
