@@ -20,8 +20,6 @@ public class StreamProducer {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
-        long events = 1L; //Long.parseLong(args[0]);
-
         Properties props = new Properties();
         // hardcoding the Kafka server URI for this example
         props.put("bootstrap.servers", "54.93.243.62:9092");
@@ -34,9 +32,9 @@ public class StreamProducer {
         // props.put("compression.type", "snappy");
         // Hard coding topic too.
 
-//        AgentProducer.produceExampleAgent(events, CORE_AGENTS_TOPIC, props);
-        CustomerProducer.produceExampleCustomer(events, CORE_CUSTOMERS_TOPIC, props);
-//        ContractProducer.produceExampleContract(events, CORE_CONTRACTS_TOPIC, props);
+        CustomerProducer.produceExampleCustomer(1, CORE_CUSTOMERS_TOPIC, props);
+        AgentProducer.produceExampleAgent(1, CORE_AGENTS_TOPIC, props);
+        ContractProducer.produceExampleContract(1, CORE_CONTRACTS_TOPIC, props);
     }
 
 

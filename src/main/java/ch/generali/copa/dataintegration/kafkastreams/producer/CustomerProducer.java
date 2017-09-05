@@ -23,8 +23,8 @@ public class CustomerProducer {
         //TODO I assume here that Replicate will create change events using schema like Customers
         Producer<String, CoreCustomer> producer = new KafkaProducer<>(props);
 
-        for (int i = 0; i < 1000; i++) {
-            String id = Integer.toString(i);
+        for (int i = 0; i < events; i++) {
+            String id = Integer.toString(i+1);
             CoreCustomerRecord data = CoreCustomerRecord.newBuilder()
                     .setCOCUID(id)
                     .setCOCUTYP(1)

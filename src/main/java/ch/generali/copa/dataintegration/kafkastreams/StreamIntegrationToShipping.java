@@ -29,7 +29,7 @@ public class StreamIntegrationToShipping {
     static public void main(String[] args) {
 
         Properties config = loadProperties("kafka-streams.properties");
-        config.put(StreamsConfig.APPLICATION_ID_CONFIG, StreamIntegrationToShipping.class.getName()+"9");
+        config.put(StreamsConfig.APPLICATION_ID_CONFIG, StreamIntegrationToShipping.class.getName()+"21");
         config.put(StreamsConfig.CLIENT_ID_CONFIG, UUID.randomUUID().toString());
         config.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
@@ -48,61 +48,75 @@ public class StreamIntegrationToShipping {
         builder.addStateStore(myStore);
 
         final KTable<String, IntPartner> partnersTable = builder.table(INPUT_TOPIC_PARTNERS);
+        final KTable<String, IntContract> contractsTable = builder.table(INPUT_TOPIC_CONTRACTS);
 
-        final KStream<String, IntContract> contractsStream = builder.stream(INPUT_TOPIC_CONTRACTS);
-        final KGroupedStream<String, IntContract> contractsGroupedByCustomer = contractsStream
-                .peek((key, value) -> System.out.println("in contractsStream " + key + " => " + value))
-                .selectKey((k,v) -> v.getPartnerIdCustomer())
-                .peek((key, value) -> System.out.println("in contractsStream NK " + key + " => " + value))
-                .groupByKey();
+        final KGroupedTable<String, IntContract> contractsGroupedByCustomer = contractsTable
+                .groupBy((k, v) -> new KeyValue<>(v.getPartnerIdCustomer(), v));
 
         final KTable<String, Long> countContractsPerCustomer = contractsGroupedByCustomer.count();
-        final KTable<String, Long> sumRentabilityPerCustomer = contractsGroupedByCustomer.aggregate(
-                () -> 0L,
-                (key, value, aggregate) -> (long)value.getRentability() + aggregate,
-                Serdes.Long());
-        final KTable<String, Long> countAgentsPerCustomer = contractsStream
+        final KGroupedTable<String, Long> contractRentabilityTable = contractsTable
+                .groupBy((k, v) -> new KeyValue<>(v.getPartnerIdCustomer(), new Long(v.getRentability())),
+                        new Serdes.StringSerde(), new Serdes.LongSerde());
+        final KTable<String, Long> sumRentabilityPerCustomer = contractRentabilityTable
+                .reduce(
+                        (currentAggregate, newValue) -> currentAggregate + newValue,
+                        (currentAggregate, oldValue) -> currentAggregate - oldValue
+                );
+
+        final KTable<String, Long> countAgentsPerCustomer = contractsTable
                 .filter((k, v) -> v.getPartnerIdAgent() != null)
-                .map((k,v) -> KeyValue.pair(v.getPartnerIdCustomer(), v/*.getPartnerIdAgent()*/))
-                .groupByKey()
+                .groupBy((k, v) -> new KeyValue<>(v.getPartnerIdCustomer()+"|"+v.getPartnerIdAgent(), 1L),
+                        new Serdes.StringSerde(), new Serdes.LongSerde())
+                .reduce(
+                        (currentAggregate, newValue) -> currentAggregate + 1,
+                        (currentAggregate, oldValue) -> currentAggregate - 1
+                )
+                .filter((key, value) -> value > 0)
+                .groupBy((k, v) -> new KeyValue<>(k.split("\\|")[0], v),
+                    new Serdes.StringSerde(),
+                    new Serdes.LongSerde()
+                )
                 .count();
+
         //TODO filter by email and phone number (not yet modeled)
         final KTable<String, IntPartner> customersWithContactData = partnersTable
                 //partners that are customers (not agent)
-//                .filter((k, v) -> v.getAgent() != null)
-                ;
+                .filter((k, v) -> v.getAgent() == null);
+                //TODO filter on having contact data;
 
 //        countContractsPerCustomer.to(new Serdes.StringSerde(), new Serdes.LongSerde(), "debug_countContractsPerCustomer");
 //        sumRentabilityPerCustomer.to(new Serdes.StringSerde(), new Serdes.LongSerde(),"debug_sumRentabilityPerCustomer");
 //        countAgentsPerCustomer.to(new Serdes.StringSerde(), new Serdes.LongSerde(),"debug_countAgentsPerCustomer");
 //        customersWithContactData.to("debug_customersWithContactData");
         //all on this table are VIPs, non-VIPs are not here
-        final KTable<String, Long> vipCustomers = contractsStream
-                .selectKey((k,v) -> v.getPartnerIdCustomer())
+        final KTable<String, Boolean> vipCustomers = contractsTable
+                .filter((k, v) -> v.getRentability() > 0)
+                .groupBy((k, v) -> new KeyValue<>(v.getPartnerIdCustomer(), v))
+                .count()
                 .join(
                         customersWithContactData,
-                        (contract, customer) -> contract.getRentability()
-                )
-                .filter((k, rentability) -> rentability >= 0)
-                .groupByKey()
-                .count();
+                        (contract, customer) -> Boolean.TRUE
+                );
 
-        final KTable<String, ShipCustomersOverview> shipping = countContractsPerCustomer
+        final KTable<String, ShipCustomersOverview> shipping = partnersTable
+                //partners that are customers (not agent)
+                .filter((k, v) -> v.getAgent() == null)
                 .mapValues((v) -> {
                     ShipCustomersOverview ship = new ShipCustomersOverview();
-                    ship.setNumberOfContracts(v);
-
+                    ship.setId(v.getId());
                     return ship;
                 })
-                .join(
-                        customersWithContactData,
-                        (ship, customer) -> {
-                            System.out.println("customersWithContactData will join "+ship+" with "+ customer);
-                            ship.setId(customer.getId());
+                .leftJoin(
+                        countContractsPerCustomer,
+                        (ship, count) -> {
+                            System.out.println("countContractsPerCustomer will join "+ship+" with "+ count);
+                            if (count != null) {
+                                ship.setNumberOfContracts(count);
+                            }
                             return ship;
                         }
                 )
-                .leftJoin(
+                .join(
                         sumRentabilityPerCustomer,
                         (ship, rentability) -> {
                             System.out.println("sumRentabilityPerCustomer will join "+ship+" with "+ rentability);
@@ -113,9 +127,9 @@ public class StreamIntegrationToShipping {
                 .leftJoin(
                         countAgentsPerCustomer,
                         (ship, numAgents) -> {
+                            System.out.println("countAgentsPerCustomer will join "+ship+" with "+ numAgents);
                             if (numAgents != null) {
                                 ship.setNumberOfAgents(numAgents);
-                                ship.setVip(true); //TODO fix below
                             }
                             return ship;
                         }
@@ -123,16 +137,17 @@ public class StreamIntegrationToShipping {
                 .leftJoin(
                         vipCustomers,
                         (ship, vipCustomer) -> {
-                            ship.setVip(true);
+                            System.out.println("vipCustomer will join "+ship+" with "+ vipCustomer);
+                            if (vipCustomer!=null) {
+                                ship.setVip(true);
+                            }
                             return ship;
                         }
-                )
-        ;
+                );
 
         shipping.to(OUTPUT_TOPIC_SHIPPING);
 
         final KafkaStreams streamsContracts = new KafkaStreams(builder, config);
-
 
         streamsContracts.cleanUp();
 

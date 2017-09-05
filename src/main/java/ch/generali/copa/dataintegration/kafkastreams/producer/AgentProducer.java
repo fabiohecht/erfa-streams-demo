@@ -20,8 +20,9 @@ public class AgentProducer {
         //TODO I assume here that Replicate will create change events using schema like Agents
         Producer<String, CoreAgent> producer = new KafkaProducer<>(props);
 
-        for (long i = 0; i < events; i++) {
-            String id = "1";
+        for (int i = 0; i < events; i++) {
+            //String id = "2";
+            String id = Integer.toString(i);
             CoreAgentRecord data = CoreAgentRecord.newBuilder()
                     .setCOAGID(id)
                     .setCOAGACTIVE(1)

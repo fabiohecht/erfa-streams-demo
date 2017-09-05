@@ -69,7 +69,7 @@ public class StreamCoreAgentsToIntegration {
                 .setGender(agent.getCOAGGENDER().equals("M")? Gender.M : Gender.F)
                 .build();
 
-        System.out.printf("Got date %s\n", agent.getCOAGBIRTHDATE());
+//        System.out.printf("Got date %s\n", agent.getCOAGBIRTHDATE());
 
         return IntPartner.newBuilder()
                 .setId("1_" + agent.getCOAGID())
