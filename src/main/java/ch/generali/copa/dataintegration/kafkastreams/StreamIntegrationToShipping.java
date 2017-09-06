@@ -29,7 +29,7 @@ public class StreamIntegrationToShipping {
     static public void main(String[] args) {
 
         Properties config = loadProperties("kafka-streams.properties");
-        config.put(StreamsConfig.APPLICATION_ID_CONFIG, StreamIntegrationToShipping.class.getName()+"24");
+        config.put(StreamsConfig.APPLICATION_ID_CONFIG, StreamIntegrationToShipping.class.getName()+"31");
         config.put(StreamsConfig.CLIENT_ID_CONFIG, UUID.randomUUID().toString());
         config.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
@@ -72,14 +72,10 @@ public class StreamIntegrationToShipping {
                 .filter((k, v) -> v.getPartnerIdAgent() != null)
                 .groupBy((k, v) -> new KeyValue<>(v.getPartnerIdCustomer()+"|"+v.getPartnerIdAgent(), 1L),
                         new Serdes.StringSerde(), new Serdes.LongSerde())
-                .reduce(
-                        (currentAggregate, newValue) -> currentAggregate + 1,
-                        (currentAggregate, oldValue) -> currentAggregate - 1
-                )
-                .filter((key, value) -> value > 0)
+                .count()
+                .filter((key, value) -> value > 0L)
                 .groupBy((k, v) -> new KeyValue<>(k.split("\\|")[0], v),
-                    new Serdes.StringSerde(),
-                    new Serdes.LongSerde()
+                    new Serdes.StringSerde(), new Serdes.LongSerde()
                 )
                 .count();
 
@@ -91,7 +87,7 @@ public class StreamIntegrationToShipping {
 
 //        countContractsPerCustomer.to(new Serdes.StringSerde(), new Serdes.LongSerde(), "debug_countContractsPerCustomer");
 //        sumRentabilityPerCustomer.to(new Serdes.StringSerde(), new Serdes.LongSerde(),"debug_sumRentabilityPerCustomer");
-//        countAgentsPerCustomer.to(new Serdes.StringSerde(), new Serdes.LongSerde(),"debug_countAgentsPerCustomer");
+        countAgentsPerCustomer.to(new Serdes.StringSerde(), new Serdes.LongSerde(),"debug_countAgentsPerCustomer");
 //        customersWithContactData.to("debug_customersWithContactData");
         //all on this table are VIPs, non-VIPs are not here
         final KTable<String, Boolean> vipCustomers = contractsTable
@@ -125,7 +121,7 @@ public class StreamIntegrationToShipping {
                         sumRentabilityPerCustomer,
                         (ship, rentability) -> {
                             System.out.println("sumRentabilityPerCustomer will join "+ship+" with "+ rentability);
-                            ship.setTotalRentability(rentability);
+                            ship.setTotalRentability(ship.getTotalRentability() + rentability);
                             return ship;
                         }
                 )
@@ -134,7 +130,7 @@ public class StreamIntegrationToShipping {
                         (ship, numAgents) -> {
                             System.out.println("countAgentsPerCustomer will join "+ship+" with "+ numAgents);
                             if (numAgents != null) {
-                                ship.setNumberOfAgents(numAgents);
+                                ship.setNumberOfAgents(ship.getNumberOfAgents() + numAgents);
                             }
                             return ship;
                         }

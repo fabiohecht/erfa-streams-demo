@@ -30,11 +30,11 @@ public class ContractProducer {
                     .setCOCOCOCUID(1)
                     .setCOCOCOAGID(i)
                     .setCOCOTYPE(3)
-                    .setCOCOCOVERAGE(100000+i)
-                    .setCOCOANNUALPREMIUM(100+i)
+                    .setCOCOCOVERAGE(100000)
+                    .setCOCOANNUALPREMIUM(100)
                     .setCOCOSTARTDATE(new LocalDate(2017, 9, 1))
                     .setCOCOENDDATE(new LocalDate(2020, 12, 31))
-                    .setCOCOTOTALPAIDPREMIUMS(1001)
+                    .setCOCOTOTALPAIDPREMIUMS(1000)
                     .setCOCOTOTALPAIDCLAIMS(0)
                     .build();
 
