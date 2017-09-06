@@ -29,9 +29,14 @@ public class StreamIntegrationToShipping {
     static public void main(String[] args) {
 
         Properties config = loadProperties("kafka-streams.properties");
-        config.put(StreamsConfig.APPLICATION_ID_CONFIG, StreamIntegrationToShipping.class.getName()+"21");
+        config.put(StreamsConfig.APPLICATION_ID_CONFIG, StreamIntegrationToShipping.class.getName()+"24");
         config.put(StreamsConfig.CLIENT_ID_CONFIG, UUID.randomUUID().toString());
         config.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
+
+        // Enable record cache of size 10 MB.
+        config.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 10 * 1024 * 1024L);
+        // Set commit interval to 1 second.
+        config.put(StreamsConfig.COMMIT_INTERVAL_MS_CONFIG, 1000);
 
         startContractStream(config);
     }
