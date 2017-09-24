@@ -1,0 +1,30 @@
+{
+  "type": "record",
+  "name": "Interest",
+  "namespace": "ch.ipt.kafkastreamsdemo",
+  "fields": [
+    {
+      "name": "user",
+      "type": "string"
+    },
+    {
+      "name": "customer",
+      "type": "string"
+    },
+    {
+      "name": "tweet",
+      "type": "string"
+    },
+    {
+      "name": "topic",
+      "type": "string"
+    },
+    {
+      "name": "timestamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    }
+  ]
+}
