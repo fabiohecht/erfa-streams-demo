@@ -117,4 +117,4 @@ Just use mvn compile to generate the needed classes.
 
 ## Author
 
-[Fabio Hecht](https://github.com/zegotinha)
+[Fabio Hecht](https://github.com/zegotinha), while working for [ipt - Famous for Integration](https://www.ipt.ch).
