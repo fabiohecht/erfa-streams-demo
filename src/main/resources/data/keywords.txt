@@ -1,0 +1,29 @@
+devops	DevOps
+release automation	DevOps
+continuous integration	DevOps
+application lifecycle	DevOps
+test data management	DevOps
+test automation	DevOps
+release management	DevOps
+version control	DevOps
+configuration management	DevOps
+docker	DevOps
+openshift	DevOps
+api	API Management
+api management	API Management
+api security	API Management
+bitcoin	Blockchain
+blockchain	Blockchain
+kafka	Event-driven Architecture
+real time	Event-driven Architecture
+confluent	Event-driven Architecture
+event driven	Event-driven Architecture
+Azure	Azure
+artificial intelligence	machine learning
+ai	machine learning
+machine learning	machine learning
+sentiment analysis	machine learning
+big data	big data
+data lake	big data
+iot	IoT
+internet of things	IoT
