@@ -113,8 +113,8 @@ Using jq is recommended to pretty print JSON on the console.
 
 ## Compiling
 
-Just use mvn compile to generate the needed classes.
+Just use mvn compile. Then you are good to run it.
 
 ## Author
 
-[Fabio Hecht](https://github.com/zegotinha), while working for [ipt - Famous for Integration](https://www.ipt.ch).
+[Fabio Hecht](https://github.com/fabiohecht), while working for [ipt - Famous for Integration](https://www.ipt.ch).
